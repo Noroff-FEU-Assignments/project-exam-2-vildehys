@@ -1,0 +1,46 @@
+.navbar a {
+  color: $clr-links;
+  font-weight: 700;
+}
+
+.navbar a.active {
+  color: $link-active;
+}
+.navbar-toggler {
+  border: none;
+  width: 50px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-container {
+  border-bottom: 2px solid $clr-links;
+}
+
+.user-container {
+  display: flex;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cta-logout {
+  background: none;
+  width: 100px;
+  border: none;
+  border-left: 2px solid white;
+  color: red;
+}
+
+@media screen and (min-width: 992px) {
+  .admin-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

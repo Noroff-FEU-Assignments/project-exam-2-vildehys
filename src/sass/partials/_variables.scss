@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap);
+
+$bg-color: #2d2b2a;
+$bg-color-active: #4a4745;
+$clr-dark: #54514f;
+$clr-dark-1: #e1e0df;
+$clr-heading: #d2dcde;
+$clr-text: #a2a7ab;
+$clr-links: #f0f0ff;
+$clr-cta: #9146ff;
+$cta-hover: #b685ff;
+$clr-icon: #f0f0ff;
+$clr-error: #ed1c24;
+$link-active: #c2c2ff;
+
+$card-bg: #c2c2ff;
+
+$border: 2px solid #303437;
+$box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+
+$colour-primary: #0005a3;
+$colour-secondary: #fd7289;
+
+$colour-primary-gradient: linear-gradient(
+  150deg,
+  $colour-primary 20%,
+  $colour-secondary 85%
+);
+
+$font-slogan: "Exo 2", sans-serif;

@@ -1,23 +1,28 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../../constants/api";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../../constants/api";
-import ErrorMessage from "../common/ErrorMessage";
+import ErrorMessage from "../../common/ErrorMessage";
+import Heading from "../../layout/Heading";
 
-const nameRegex = /^[a-zA-Z0-9]+$/;
+const nameRegex = /^[a-zA-Z0-9_]+$/;
 const emailRegex = /^\w+([-+.']\w+)*@?(stud.noroff.no|noroff.no)$/;
 
 const schema = yup.object().shape({
-  name: yup.string().required("Please enter your name").matches(nameRegex),
+  name: yup
+    .string()
+    .required("Please enter your name")
+    .matches(nameRegex, "Only underscore symbol (_) allowed"),
   email: yup
     .string()
-    .required("Please enter your email.")
+    .required("Please enter a valid email.")
     .email()
     .matches(
       emailRegex,
-      "Your e-mail must be a stud.noroff.no or noroff.no address."
+      "your email must belong to Noroff; stud.noroff.no or noroff.no"
     ),
   password: yup
     .string()
@@ -28,9 +33,9 @@ const schema = yup.object().shape({
 });
 
 export default function RegisterForm() {
+  const [, setMessage] = useState("");
   const [, setSubmitting] = useState(false);
   const [registerError, setRegisterError] = useState(null);
-  const [, setMessage] = useState("");
   const navigate = useNavigate();
 
   const {
@@ -62,9 +67,11 @@ export default function RegisterForm() {
       console.log(json);
       if (response.ok) {
         navigate("/login");
-        setMessage("Account created");
+        setMessage("Account is successfully created");
       } else {
-        setRegisterError("Account already exists");
+        setRegisterError(
+          "Ooops! Your account is already registered in our system."
+        );
       }
     } catch (error) {
       console.log("error", error);
@@ -75,8 +82,9 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className="container">
+    <div className="form-container">
       <form onSubmit={handleSubmit(registerSubmit)}>
+        <Heading title="Register" />
         {registerError && <ErrorMessage>{registerError}</ErrorMessage>}
         <div>
           <label htmlFor="name">
@@ -119,7 +127,11 @@ export default function RegisterForm() {
             <ErrorMessage>{errors.banner.message}</ErrorMessage>
           )}
         </div>
-
+        <div className="login">
+          <Link to={`/login`} className="login-links">
+            Already have an account? Click to login here.
+          </Link>
+        </div>
         <button className="cta">Register</button>
       </form>
     </div>

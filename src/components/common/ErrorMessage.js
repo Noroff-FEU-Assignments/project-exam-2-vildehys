@@ -1,9 +1,3 @@
-import PropTypes from "prop-types";
-
-export default function ValidationError({ children }) {
+export default function ErrorMessage({ children }) {
   return <div className="form-error">{children}</div>;
 }
-
-ValidationError.propTypes = {
-  children: PropTypes.node.isRequired,
-};

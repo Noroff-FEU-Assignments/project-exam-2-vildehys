@@ -1,0 +1,9 @@
+.modal-content {
+  background: $colour-primary-gradient;
+  border-radius: 0;
+  border-style: none;
+  max-width: 380px;
+  display: flex;
+  margin: 0 auto;
+  box-shadow: $box-shadow;
+}
