@@ -1,8 +1,10 @@
-.post-overview-container {
+.post-overview-container,
+.newpost-container {
   max-width: 500px;
 }
 
-.posts-container {
+.posts-container,
+.newpost-container {
   padding: 1rem;
   margin: 2rem auto;
   text-align: center;

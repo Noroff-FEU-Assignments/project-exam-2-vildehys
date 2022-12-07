@@ -42,3 +42,8 @@ textarea {
 .comment-form {
   margin-top: 0;
 }
+
+textarea {
+  color: $bg-color;
+  border: none;
+}

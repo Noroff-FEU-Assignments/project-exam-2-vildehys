@@ -54,26 +54,32 @@ export default function NewPost() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(postComment)} className="mt-5">
+      <div className="newpost-container">
         <Heading title="Create a new post" />
-        {postError && <ErrorMessage>{postError}</ErrorMessage>}
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input type="text" id="title" {...register("title")} />
-          {errors.title && <ErrorMessage>{errors.title.message}</ErrorMessage>}
-        </div>
-        <div>
-          <label htmlFor="body">Message:</label>
-          <textarea id="body" {...register("body")} rows={6}></textarea>
-          {errors.boddy && <ErrorMessage>{errors.body.message}</ErrorMessage>}
-        </div>
-        <div>
-          <label htmlFor="media">Image Url:</label>
-          <input id="media" {...register("image")} />
-          {errors.image && <ErrorMessage>{errors.image.message}</ErrorMessage>}
-        </div>
-        <button className="cta">Post</button>
-      </form>
+        <form onSubmit={handleSubmit(postComment)} className="mt-5">
+          {postError && <ErrorMessage>{postError}</ErrorMessage>}
+          <div>
+            <label htmlFor="title">Title:</label>
+            <input type="text" id="title" {...register("title")} />
+            {errors.title && (
+              <ErrorMessage>{errors.title.message}</ErrorMessage>
+            )}
+          </div>
+          <div>
+            <label htmlFor="body">Message:</label>
+            <textarea id="body" {...register("body")} rows={6}></textarea>
+            {errors.boddy && <ErrorMessage>{errors.body.message}</ErrorMessage>}
+          </div>
+          <div>
+            <label htmlFor="media">Image Url:</label>
+            <input id="media" {...register("image")} />
+            {errors.image && (
+              <ErrorMessage>{errors.image.message}</ErrorMessage>
+            )}
+          </div>
+          <button className="cta">Post</button>
+        </form>
+      </div>
     </>
   );
 }

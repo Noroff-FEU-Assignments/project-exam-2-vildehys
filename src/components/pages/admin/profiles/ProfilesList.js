@@ -34,8 +34,8 @@ export default function ProfilesList() {
 
   return (
     <div className="profile-overview-container">
-      <Col md={12} className="column-center">
-        <Heading title="Profile overview" />
+      <Heading title="Profile overview" />
+      <Col md={12} className="column-middle">
         {profiles.map((profile, index) => {
           return (
             <div key={profile.id} className="profiles-container">

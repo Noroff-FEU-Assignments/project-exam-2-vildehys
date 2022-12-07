@@ -1,10 +1,14 @@
-.profiles-container {
+.profile-overview-container {
   max-width: 500px;
-  padding: 0em;
-  margin: 2rem auto;
-  text-align: center;
-  border: 2px solid white;
-  box-shadow: $box-shadow;
+  margin: 0 auto;
+
+  .profiles-container {
+    padding: 1rem;
+    margin: 2rem auto;
+    text-align: center;
+    border: 2px solid white;
+    box-shadow: $box-shadow;
+  }
 }
 
 .profiles-banner {
