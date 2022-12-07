@@ -1,3 +1,4 @@
+import React from "react";
 import { BASE_URL } from "../../../../constants/api";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext";
@@ -9,13 +10,15 @@ import ReactPost from "./ReactPost";
 import ImagePost from "./ImagePost";
 import Col from "react-bootstrap/Col";
 import ErrorMessage from "../../../common/ErrorMessage";
+import Reactions from "./Kim";
 
-export default function PostDetails() {
+export default function PostDetails(post) {
   const { state, setDetails, setComments } = useStore();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [auth] = useContext(AuthContext);
   const [key, setKey] = useState("comment");
+  const [reactions, setReactions] = React.useState(post.reactions);
 
   let { id } = useParams();
 
@@ -36,6 +39,7 @@ export default function PostDetails() {
           const json = await response.json();
           setDetails(json);
           setComments(json.comments);
+          setReactions(json.reactions);
         } else {
           setError("Something went wrong in the API request");
         }
@@ -59,24 +63,16 @@ export default function PostDetails() {
 
   return (
     <>
-      <div className="post-container ">
-        <Col md={12} className="column-middle">
+      <div key={state.id} className="post-container">
+        <Col md={12} className="post-column">
           <Heading title={`${state.details.author.name}'s post`} />
           <h2>{state.details.title}</h2>
           <ImagePost image={state.details.media} />
           <p className="post-details-text">{state.details.body}</p>
 
-          {state.details.reactions.map((react, index) => {
-            return (
-              <span key={index}>
-                {react.symbol}
-                {react.count}
-              </span>
-            );
-          })}
-
           <div className="comment-container">
             {state.comments.map((comment) => {
+              console.log(state.comments);
               return (
                 <div key={comment.id}>
                   <span>
@@ -85,8 +81,12 @@ export default function PostDetails() {
                 </div>
               );
             })}
-            <ReactPost />
-
+            <Reactions reactions={reactions} />
+            <ReactPost
+              post={state}
+              setReactions={setReactions}
+              reactions={state.details.reactions}
+            />
             <CommentPost />
           </div>
         </Col>

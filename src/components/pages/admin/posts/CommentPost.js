@@ -20,6 +20,7 @@ export default function CommentOnPost() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -42,7 +43,7 @@ export default function CommentOnPost() {
         `posts/${id}/comment`,
         JSON.stringify(formData)
       );
-      if (response.ok) {
+      if (response.status === 200 || response.status === 201) {
         addComment(response.data);
       }
     } catch (error) {
