@@ -10,7 +10,7 @@ import ReactPost from "./ReactPost";
 import ImagePost from "./ImagePost";
 import Col from "react-bootstrap/Col";
 import ErrorMessage from "../../../common/ErrorMessage";
-import Reactions from "./Kim";
+import Reactions from "./ReactionPost";
 
 export default function PostDetails(post) {
   const { state, setDetails, setComments } = useStore();
@@ -41,7 +41,7 @@ export default function PostDetails(post) {
           setComments(json.comments);
           setReactions(json.reactions);
         } else {
-          setError("Something went wrong in the API request");
+          setError("Ooops. Something went wrong.");
         }
       } catch (error) {
         setError(error.toString());
@@ -51,6 +51,7 @@ export default function PostDetails(post) {
       }
     }
     getPostDetails();
+    // eslint-disable-next-line
   }, [url]);
 
   if (loading) {
@@ -75,7 +76,7 @@ export default function PostDetails(post) {
               console.log(state.comments);
               return (
                 <div key={comment.id}>
-                  <span>
+                  <span className="comment">
                     {comment.owner}: {comment.body}
                   </span>
                 </div>

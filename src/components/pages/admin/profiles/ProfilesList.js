@@ -29,6 +29,7 @@ export default function ProfilesList() {
     }
 
     fetchProfiles();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -35,20 +35,32 @@ export default function ReactPost({ setReactions, reactions, post }) {
   return (
     <>
       <div className="reaction">
-        <button data-symbol="🍌" onClick={setEmoji}>
-          🍌
+        <button data-symbol="😃" onClick={setEmoji} class="emojis">
+          😃
         </button>
-        <button data-symbol="❤️" onClick={setEmoji}>
+        <button data-symbol="😂" onClick={setEmoji} class="emojis">
+          😂
+        </button>
+        <button data-symbol="😍 " onClick={setEmoji} class="emojis">
+          😍
+        </button>
+        <button data-symbol="😳" onClick={setEmoji} class="emojis">
+          😳
+        </button>
+        <button data-symbol="😣" onClick={setEmoji} class="emojis">
+          😣
+        </button>
+        <button data-symbol="😔" onClick={setEmoji} class="emojis">
+          😔
+        </button>
+        <button data-symbol="😭" onClick={setEmoji} class="emojis">
+          😭
+        </button>
+        <button data-symbol="😍" onClick={setEmoji} class="emojis">
+          😍
+        </button>
+        <button data-symbol="❤️" onClick={setEmoji} class="emojis">
           ❤️
-        </button>
-        <button data-symbol="🙈" onClick={setEmoji}>
-          🙈
-        </button>
-        <button data-symbol="🙉" onClick={setEmoji}>
-          🙉
-        </button>
-        <button data-symbol="🙊" onClick={setEmoji}>
-          🙊
         </button>
       </div>
     </>

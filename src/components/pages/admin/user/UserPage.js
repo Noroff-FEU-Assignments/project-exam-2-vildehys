@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useAxios from "../../../../hooks/useAxios";
 import Heading from "../../../layout/Heading";
 import ErrorMessage from "../../../common/ErrorMessage";
@@ -40,6 +40,7 @@ export default function UserProfile() {
       }
     }
     getProfile();
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {

@@ -32,6 +32,7 @@ export default function ProfileDetails() {
       }
     }
     getProfile();
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {
@@ -41,15 +42,6 @@ export default function ProfileDetails() {
   if (error) {
     return <ErrorMessage />;
   }
-
-  const showFollowers = () => {
-    const followerContainer = document.querySelector(".followers-container");
-    followerContainer.classList.toggle("d-none");
-  };
-  const showFollowing = () => {
-    const followerContainer = document.querySelector(".following-container");
-    followerContainer.classList.toggle("d-none");
-  };
 
   return (
     <div className="user-profile-container">
