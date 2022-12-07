@@ -17,30 +17,32 @@ function Layout() {
   }
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <NavLink to="/" exact>
-        <Navbar.Brand>Project Exam 2</Navbar.Brand>
-      </NavLink>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <NavLink to="/contact" className="nav-link">
-            Register
-          </NavLink>
-          {auth ? (
-            <>
-              <NavLink to="/admin" className="nav-link">
-                Admin
-              </NavLink>
-              {""}| <button onClick={logout}>Log out</button>
-            </>
-          ) : (
-            <NavLink to="/login" className="nav-link">
-              Login
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <NavLink to="/" exact>
+          <Navbar.Brand>Project Exam 2</Navbar.Brand>
+        </NavLink>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <NavLink to="/contact" className="nav-link">
+              Register
             </NavLink>
-          )}
-        </Nav>
-      </Navbar.Collapse>
+            {auth ? (
+              <>
+                <NavLink to="/admin" className="nav-link">
+                  Admin
+                </NavLink>
+                {""}| <button onClick={logout}>Log out</button>
+              </>
+            ) : (
+              <NavLink to="/login" className="nav-link">
+                Login
+              </NavLink>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }

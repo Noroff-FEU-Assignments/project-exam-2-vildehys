@@ -41,7 +41,7 @@ export default function RegisterForm() {
     resolver: yupResolver(schema),
   });
 
-  const url = BASE_URL;
+  const url = BASE_URL + "auth/register";
 
   async function registerSubmit(data) {
     setSubmitting(true);

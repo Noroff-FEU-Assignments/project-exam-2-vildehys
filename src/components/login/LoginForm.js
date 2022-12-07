@@ -12,7 +12,7 @@ import Container from "react-bootstrap/Container";
 const url = BASE_URL + "auth/login";
 
 const schema = yup.object().shape({
-  username: yup.string().required("Please enter your username"),
+  email: yup.string().required("Please enter your email"),
   password: yup.string().required("Please enter your password"),
 });
 
@@ -42,7 +42,7 @@ export default function LoginForm() {
       const response = await axios.post(url, data);
       console.log("response", response.data);
       setAuth(response.data);
-      navigate("/admin");
+      navigate("/");
     } catch (error) {
       console.log("error", error);
       setLoginError(error.toString());
@@ -58,10 +58,8 @@ export default function LoginForm() {
           {loginError && <FormError>{loginError}</FormError>}
           <fieldset disabled={submitting}>
             <div>
-              <input {...register("username")} id="username" />
-              {errors.username && (
-                <FormError>{errors.username.message}</FormError>
-              )}
+              <input {...register("email")} id="email" />
+              {errors.email && <FormError>{errors.email.message}</FormError>}
             </div>
 
             <div>
