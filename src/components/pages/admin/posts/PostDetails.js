@@ -1,5 +1,5 @@
 import React from "react";
-import { BASE_URL } from "../../../../constants/api";
+import { BASE_URL } from "../../../../constants/Api";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext";
 import { useStore } from "../../../../context/PostContext";
