@@ -9,6 +9,8 @@ export default function DeletePost({ id }) {
       console.log("response", response);
     } catch (error) {
       console.log(error.toString());
+    } finally {
+      window.location.reload();
     }
   }
 
