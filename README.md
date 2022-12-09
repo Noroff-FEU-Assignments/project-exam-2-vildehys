@@ -2,7 +2,7 @@
 
 The project is a social media platform. made using React and React Bootstrap. The project mis based on content fetched from Noroff Api, and views results such as profiles, posts, and user.
 
-# Libraries and frameworks
+## Libraries and frameworks
 
 The following libraries and frameworks has been used for this project;
 
