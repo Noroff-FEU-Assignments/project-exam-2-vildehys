@@ -17,7 +17,6 @@ export default function PostDetails(post) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [auth] = useContext(AuthContext);
-  const [key, setKey] = useState("comment");
   const [reactions, setReactions] = React.useState(post.reactions);
 
   let { id } = useParams();

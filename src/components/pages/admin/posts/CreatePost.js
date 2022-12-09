@@ -7,9 +7,9 @@ import ErrorMessage from "../../../common/ErrorMessage";
 import Heading from "../../../layout/Heading";
 
 const schema = yup.object().shape({
-  title: yup.string().required("Add title to your post"),
-  body: yup.string().required("Add text to your post"),
-  image: yup.string().notRequired("Add an image URL for your post"),
+  title: yup.string().required("Please add a title for your post"),
+  body: yup.string().required("Please add text for your post"),
+  image: yup.string().notRequired("Image URL"),
 });
 
 export default function NewPost() {
@@ -49,6 +49,7 @@ export default function NewPost() {
       setPostError(error.toString());
     } finally {
       setSubmitting(false);
+      window.location.reload();
     }
   }
 

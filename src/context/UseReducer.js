@@ -6,10 +6,27 @@ export const initialState = {
   error: null,
 };
 
-const postReducer = (state, action) => {
+const useReducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
+    case "ADD_POST":
+      return {
+        ...state,
+        posts: state.posts.push(payload),
+      };
+
+    case "REMOVE_POST":
+      return {
+        ...state,
+        posts: state.posts.filter((post) => post.id !== payload),
+      };
+
+    case "ADD_COMMENT":
+      return {
+        ...state,
+        comments: state.comments.push(payload),
+      };
     case "SET_POSTS":
       return {
         ...state,
@@ -36,27 +53,10 @@ const postReducer = (state, action) => {
         ...state,
         comments: payload,
       };
-    case "ADD_COMMENT":
-      return {
-        ...state,
-        comments: state.comments.push(payload),
-      };
-
-    case "ADD_POST":
-      return {
-        ...state,
-        posts: state.posts.push(payload),
-      };
-
-    case "REMOVE_POST":
-      return {
-        ...state,
-        posts: state.posts.filter((post) => post.id !== payload),
-      };
 
     default:
-      throw new Error(`No case for type ${type} found in postReducer.`);
+      throw new Error(`Nothing found for ${type} in useReducer.`);
   }
 };
 
-export default postReducer;
+export default useReducer;

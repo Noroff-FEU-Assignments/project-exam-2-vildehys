@@ -42,7 +42,9 @@ function UpdateForm({ id, title, body }) {
 
   return (
     <form onSubmit={handleSubmit(updatePost)}>
-      {updated && <div className="success">The post was updated</div>}
+      {updated && (
+        <div className="success">The post was successfully updated!</div>
+      )}
       {updateError && <ErrorMessage>{updateError}</ErrorMessage>}
       <div>
         <label htmlFor="title">Title:</label>

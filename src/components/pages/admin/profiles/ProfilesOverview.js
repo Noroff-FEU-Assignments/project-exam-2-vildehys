@@ -1,13 +1,14 @@
-import useAxios from "../../../../hooks/useAxios";
+import React from "react";
 import { useEffect, useState } from "react";
-import ErrorMessage from "../../../common/ErrorMessage";
+import useAxios from "../../../../hooks/useAxios";
 import { Link } from "react-router-dom";
 import Avatar from "../user/NoAvatar";
 import Banner from "../user/NoBanner";
 import Col from "react-bootstrap/Col";
 import Heading from "../../../layout/Heading";
+import ErrorMessage from "../../../common/ErrorMessage";
 
-export default function ProfilesList() {
+export default function ProfilesOverview() {
   const [profiles, viewProfiles] = useState([]);
   const [setLoading] = useState(true);
   const [error, setError] = useState(null);

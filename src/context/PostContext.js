@@ -2,7 +2,7 @@ import { createContext, useReducer, useContext, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
 import { BASE_URL } from "../constants/Api";
 
-import postReducer, { initialState } from "./postReducer";
+import postReducer, { initialState } from "./UseReducer";
 
 const PostContext = createContext(initialState);
 

@@ -1,9 +1,9 @@
+import React from "react";
 import { useStore } from "../../../../context/PostContext";
 import { Link } from "react-router-dom";
 import ImagePost from "./ImagePost";
 import Col from "react-bootstrap/Col";
 import Heading from "../../../layout/Heading";
-
 import { ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/20/solid";
 
 export default function PostsList() {
@@ -35,7 +35,7 @@ export default function PostsList() {
                   <HeartIcon className="icon icon-heart" />
                   <span className="post-count">{post._count.reactions}</span>
                 </div>
-                <div className="btn-container">
+                <div className="cta-container">
                   <Link to={`/posts/${post.id}`} className="cta post-cta">
                     View Post
                   </Link>

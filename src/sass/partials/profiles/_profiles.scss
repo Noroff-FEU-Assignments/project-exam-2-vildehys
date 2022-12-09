@@ -6,15 +6,11 @@
     padding: 1rem;
     margin: 2rem auto;
     text-align: center;
-    border: 2px solid white;
+    border: $border;
     box-shadow: $box-shadow;
   }
 }
 
 .profiles-banner {
   margin: 0em;
-}
-
-.profiles-card {
-  color: white;
 }

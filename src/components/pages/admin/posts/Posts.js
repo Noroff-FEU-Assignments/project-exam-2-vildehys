@@ -1,9 +1,9 @@
-import PostsList from "./PostsList";
+import PostOverview from "./PostOverview";
 
 export default function Posts() {
   return (
     <>
-      <PostsList />
+      <PostOverview />
     </>
   );
 }

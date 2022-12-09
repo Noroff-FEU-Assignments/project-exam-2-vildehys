@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is a social media platform. made using React and React Bootstrap. The project mis based on content fetched from Noroff Api, and views results such as profiles, posts, and user.
 
-## Available Scripts
+# Libraries and frameworks
 
-In the project directory, you can run:
+The following libraries and frameworks has been used for this project;
 
-### `npm start`
+- React
+- React-Bootstrap
+- SASS/SCSS styling
+- Axios
+- Yup/ React-Hook-Forms
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Brief for projects
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+An existing Social Media company has approached you to create a brand new front end for their application. While they have a list of required features, the design and user experience has not been specified. Working with the official API documentation, plan, design and build a modern front end social media application.
 
-### `npm test`
+### Starting the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A hosted demo of the project can be found at https://code-4.netlify.app/.
 
-### `npm run build`
+The project can also be started through cloning this repo, and running `npm start` command in terminal. This will cause the app to be viewed through localhost (port: 3000).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Set up
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app also requires a valid and registered profile to start using it. This can be done through the registration form on the landing page. A stud.noroff.no/noroff.no e-mail is required, and a password of choice (\* minimum 8 characters).
+After successfull registration, you're able to proceed to the login page. From here on you're able to view other users posts, a list of profiles registered, as well as an overview of posts. You can interact with other users through following (or unfollowing). You're able to view a single detailed profile as well as a detailed post, and react/comment to this post if wished. You have full access of your own user, which let's you update your avatar and banner using an image URL of your choice. From here you can also update content in- or delete posts that you've previously posted, and get a full overview of these.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Reflection
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is my finale delivery at Noroff and has been challenging and educational in many ways. I've been met with quite a few obstacles a long the way, that made it more challenging to face deadlines set earlier while planning out the project (Kanban). I'm happy with getting proper functionality to the page, but there's also several adjustments to both UI/UX in terms of design and functions that could've been reworked for the better. I'm happy with getting the site up and running, but still feel like I could've done better.

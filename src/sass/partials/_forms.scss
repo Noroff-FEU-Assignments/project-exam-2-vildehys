@@ -13,13 +13,20 @@ input,
 textarea {
   width: 100%;
   padding: 0.5rem;
-  background-color: $clr-dark-1;
   border: none;
-  color: white;
+  color: $color-input;
+}
+
+.form-container {
+  border: $border;
+  box-shadow: $box-shadow;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: 100px;
 }
 
 .login-links {
-  color: white;
   text-decoration: underline;
   font-size: 15px;
 }
@@ -30,20 +37,6 @@ textarea {
   text-align: center;
 }
 
-.form-container {
-  border: 2px solid white;
-  box-shadow: $box-shadow;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 1rem;
-  margin-top: 100px;
-}
-
 .comment-form {
   margin-top: 0;
-}
-
-textarea {
-  color: $bg-color;
-  border: none;
 }

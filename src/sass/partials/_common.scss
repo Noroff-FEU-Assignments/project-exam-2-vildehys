@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: $font-primary;
+  color: $color-font;
 }
 
 body {
@@ -9,13 +11,13 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   background-attachment: fixed;
-  color: white;
+  color: $color-primary;
 }
 
 h1 {
   font-family: $font-slogan;
   font-size: 100px;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: $text-shadow;
 }
 
 h2 {
@@ -31,10 +33,6 @@ a {
   text-decoration: none;
   padding: 10px;
   font-size: 20px;
-}
-
-.navbar a.active {
-  border-bottom-style: 2px solid red;
 }
 
 .user-avatar {
@@ -59,7 +57,7 @@ a {
   text-align: center;
   width: 100%;
   background: none;
-  color: white;
+  color: $color-primary;
   font-size: 18px;
   margin-top: 20px;
   padding: 10px;
@@ -78,7 +76,7 @@ a {
 }
 
 .cta2 {
-  border: 3px solid red;
+  border: 3px solid $color-cta2;
 }
 
 .activity-cta {
@@ -86,18 +84,7 @@ a {
   gap: 10px;
 }
 
-.icon:hover,
-.Link:hover,
-.NavLink:hover,
-a:hover {
-  color: $cta-hover;
-}
-
 .required {
-  color: #cf6679;
+  color: $colour-secondary;
   margin-left: 5px;
-}
-
-.optional {
-  color: $clr-text;
 }

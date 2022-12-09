@@ -5,8 +5,8 @@ import Heading from "../../../layout/Heading";
 import ErrorMessage from "../../../common/ErrorMessage";
 import Banner from "../user/NoBanner";
 import Avatar from "../user/NoAvatar";
-import Follow from "./ProfileFollow";
-import Unfollow from "./ProfileUnfollow";
+import Follow from "./FollowProfile";
+import Unfollow from "./UnfollowProfile";
 
 export default function ProfileDetails() {
   const [error, setError] = useState(null);
@@ -18,12 +18,11 @@ export default function ProfileDetails() {
   const axios = useAxios();
 
   useEffect(() => {
-    async function getProfile() {
+    async function fetchProfile() {
       try {
         const response = await axios.get(
           `profiles/${name}?_posts=true&_following=true&_followers=true`
         );
-        console.log("response", response);
         setProfile(response.data);
       } catch (error) {
         setError(error.toString());
@@ -31,7 +30,7 @@ export default function ProfileDetails() {
         setLoading(false);
       }
     }
-    getProfile();
+    fetchProfile();
     // eslint-disable-next-line
   }, []);
 
@@ -44,7 +43,7 @@ export default function ProfileDetails() {
   }
 
   return (
-    <div className="user-profile-container">
+    <div className="profile-details">
       <div className="banner-container">
         <Banner image={profile.banner} class={"user-profile-banner"} />
       </div>
@@ -59,14 +58,14 @@ export default function ProfileDetails() {
 
         <div className="d-flex justify-content-center gap-4 text-center">
           <div className="activity">
-            <span className="d-block count-follow-text">Followers</span>
-            <span className="count-follow post-count">
+            <span className="d-block counters">Followers</span>
+            <span className="counters-followers">
               {profile._count.followers}
             </span>
           </div>
           <div className="activity">
-            <span className="d-block count-follow-text">Following</span>
-            <span className="count-follow post-count">
+            <span className="d-block counters">Following</span>
+            <span className="counters-following">
               {profile._count.following}
             </span>
           </div>

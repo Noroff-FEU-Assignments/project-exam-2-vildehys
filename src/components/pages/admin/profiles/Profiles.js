@@ -1,10 +1,10 @@
-import ProfilesList from "./ProfilesList";
+import ProfilesOverview from "./ProfilesOverview";
 
 export default function Profiles() {
   return (
     <>
       <div className="profiles">
-        <ProfilesList />
+        <ProfilesOverview />
       </div>
     </>
   );

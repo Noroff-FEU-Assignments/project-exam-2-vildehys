@@ -28,8 +28,6 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter your password")
     .min(8, "Password must be atleast 8 characters."),
-  avatar: yup.string(),
-  banner: yup.string(),
 });
 
 export default function RegisterForm() {
@@ -109,24 +107,7 @@ export default function RegisterForm() {
             <ErrorMessage>{errors.password.message}</ErrorMessage>
           )}
         </div>
-        <div>
-          <label htmlFor="avatar">
-            Avatar:<span className="optional"> (optional)</span>
-          </label>
-          <input id="avatar" {...register("avatar")} />
-          {errors.avatar && (
-            <ErrorMessage>{errors.avatar.message}</ErrorMessage>
-          )}
-        </div>
-        <div>
-          <label htmlFor="banner">
-            Banner:<span className="optional"> (optional)</span>
-          </label>
-          <input id="banner" {...register("banner")} />
-          {errors.banner && (
-            <ErrorMessage>{errors.banner.message}</ErrorMessage>
-          )}
-        </div>
+
         <div className="login">
           <Link to={`/login`} className="login-links">
             Already have an account? Click to login here.

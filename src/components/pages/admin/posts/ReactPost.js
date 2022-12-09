@@ -2,8 +2,7 @@ import useAxios from "../../../../hooks/useAxios";
 import React from "react";
 
 export default function ReactPost({ setReactions, reactions, post }) {
-  //console.log(post);
-  const http = useAxios();
+  const axios = useAxios();
   const [, setIsSubmitting] = React.useState(false);
 
   const setEmoji = async (event) => {
@@ -14,7 +13,7 @@ export default function ReactPost({ setReactions, reactions, post }) {
     );
     setIsSubmitting(true);
     try {
-      const response = await http.put(
+      const response = await axios.put(
         `posts/${post.details.id}/react/${symbol}`
       );
       if (findReaction) {
