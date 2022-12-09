@@ -1,28 +1,23 @@
+import { React } from "react";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../../../constants/Api";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../../constants/Api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ErrorMessage from "../../common/ErrorMessage";
 import Heading from "../../layout/Heading";
 
-const nameRegex = /^[a-zA-Z0-9_]+$/;
-const emailRegex = /^\w+([-+.']\w+)*@?(stud.noroff.no|noroff.no)$/;
-
 const schema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Please enter your name")
-    .matches(nameRegex, "Only underscore symbol (_) allowed"),
+  name: yup.string().required("Please enter your name."),
   email: yup
     .string()
-    .required("Please enter a valid email.")
+    .required("Please enter a valid Noroff email.")
     .email()
     .matches(
-      emailRegex,
-      "your email must belong to Noroff; stud.noroff.no or noroff.no"
+      /^[a-zA-Z]+[a-zA-Z0-9_.]+@+(\bnoroff|\bstud.noroff).+n+o$/,
+      "Your e-mail must be a valid stud.noroff.no / noroff.no e-mail."
     ),
   password: yup
     .string()
@@ -86,21 +81,21 @@ export default function RegisterForm() {
         {registerError && <ErrorMessage>{registerError}</ErrorMessage>}
         <div>
           <label htmlFor="name">
-            Name:<span className="required">*</span>
+            Name:<span className="required">!</span>
           </label>
           <input id="name" {...register("name")} />
           {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
         </div>
         <div>
           <label htmlFor="email">
-            Email:<span className="required">*</span>
+            Email:<span className="required">!</span>
           </label>
           <input id="email" {...register("email")} />
           {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
         </div>
         <div>
           <label htmlFor="password">
-            Password:<span className="required">*</span>
+            Password:<span className="required">!</span>
           </label>
           <input id="password" {...register("password")} type="password" />
           {errors.password && (

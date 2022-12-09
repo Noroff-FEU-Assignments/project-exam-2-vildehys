@@ -30,3 +30,5 @@ After successfull registration, you're able to proceed to the login page. From h
 ## Reflection
 
 The project is my finale delivery at Noroff and has been challenging and educational in many ways. I've been met with quite a few obstacles a long the way, that made it more challenging to face deadlines set earlier while planning out the project (Kanban). I'm happy with getting proper functionality to the page, but there's also several adjustments to both UI/UX in terms of design and functions that could've been reworked for the better. I'm happy with getting the site up and running, but still feel like I could've done better.
+
+Thank you to fellow students for help and discussions around debugging and easier solutions, and contributions to the code - especially context part.

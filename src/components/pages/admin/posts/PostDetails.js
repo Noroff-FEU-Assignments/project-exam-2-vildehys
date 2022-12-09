@@ -13,10 +13,10 @@ import ErrorMessage from "../../../common/ErrorMessage";
 import Reactions from "./ReactionPost";
 
 export default function PostDetails(post) {
-  const { state, setDetails, setComments } = useStore();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [auth] = useContext(AuthContext);
+  const { state, setDetails, setComments } = useStore();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [reactions, setReactions] = React.useState(post.reactions);
 
   let { id } = useParams();
@@ -25,7 +25,7 @@ export default function PostDetails(post) {
     BASE_URL + `posts/${id}?_author=true&_comments=true&_reactions=true`;
 
   useEffect(() => {
-    async function getPostDetails() {
+    async function fetchPostDetails() {
       const options = {
         method: "GET",
         headers: {
@@ -36,9 +36,9 @@ export default function PostDetails(post) {
         const response = await fetch(url, options);
         if (response.ok) {
           const json = await response.json();
-          setDetails(json);
           setComments(json.comments);
           setReactions(json.reactions);
+          setDetails(json);
         } else {
           setError("Ooops. Something went wrong.");
         }
@@ -49,7 +49,7 @@ export default function PostDetails(post) {
         setLoading(false);
       }
     }
-    getPostDetails();
+    fetchPostDetails();
     // eslint-disable-next-line
   }, [url]);
 
@@ -70,7 +70,7 @@ export default function PostDetails(post) {
           <ImagePost image={state.details.media} />
           <p className="post-details-text">{state.details.body}</p>
 
-          <div className="comment-container">
+          <div className="comments">
             {state.comments.map((comment) => {
               console.log(state.comments);
               return (
@@ -84,8 +84,8 @@ export default function PostDetails(post) {
             <Reactions reactions={reactions} />
             <ReactPost
               post={state}
-              setReactions={setReactions}
               reactions={state.details.reactions}
+              setReactions={setReactions}
             />
             <CommentPost />
           </div>

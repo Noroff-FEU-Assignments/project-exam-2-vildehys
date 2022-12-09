@@ -7,7 +7,7 @@ import Profiles from "./components/pages/admin/profiles/Profiles";
 import UserPage from "./components/pages/admin/user/UserPage";
 import Posts from "./components/pages/admin/posts/Posts";
 import PostDetails from "./components/pages/admin/posts/PostDetails";
-import CreatePost from "./components//pages/admin/posts/CreatePost";
+import NewPost from "./components//pages/admin/posts/NewPost";
 import { AuthProvider } from "./context/AuthContext";
 import { PostProvider } from "./context/PostContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -28,7 +28,7 @@ function App() {
             <Route path="/posts/:id" element={<PostDetails />}></Route>
             <Route path="/profiles" element={<Profiles />}></Route>
             <Route path="/profile/:name" element={<ProfileDetails />}></Route>
-            <Route path="/new-post" element={<CreatePost />}></Route>
+            <Route path="/new-post" element={<NewPost />}></Route>
           </Routes>
         </Router>
       </PostProvider>

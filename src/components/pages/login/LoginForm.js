@@ -15,15 +15,13 @@ const schema = yup.object().shape({
   email: yup
     .string()
     .required("Please enter your email.")
-    .email("Please enter a valid email address."),
+    .email("Please enter a valid Noroff email address."),
   password: yup.string().required("Please enter your password"),
 });
 
 export default function LoginForm() {
-  const [submitting, setSubmitting] = useState(false);
+  const [submit, setsubmit] = useState(false);
   const [loginError, setLoginError] = useState(null);
-
-  const navigate = useNavigate();
 
   const {
     register,
@@ -32,19 +30,20 @@ export default function LoginForm() {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  const navigate = useNavigate();
 
   const [, setAuth] = useContext(AuthContext);
 
   async function loginSubmit(data) {
-    setSubmitting(true);
+    setsubmit(true);
     setLoginError(null);
 
-    const formData = JSON.stringify(data);
-    console.log(formData);
+    const formContent = JSON.stringify(data);
+    console.log(formContent);
 
     const options = {
       method: "POST",
-      body: formData,
+      body: formContent,
       headers: {
         "Content-Type": "application/json",
       },
@@ -57,12 +56,12 @@ export default function LoginForm() {
         setAuth(json);
         navigate("/posts");
       } else {
-        setLoginError("wrong username or password");
+        setLoginError("Your username and/or password is incorrect");
       }
     } catch (error) {
       setLoginError(error.toString());
     } finally {
-      setSubmitting(false);
+      setsubmit(false);
     }
   }
 
@@ -94,9 +93,7 @@ export default function LoginForm() {
               </Link>
             </div>
           </div>
-          <button className="cta">
-            {submitting ? "Logging in" : "Log in"}
-          </button>
+          <button className="cta">{submit ? "Logging in" : "Log in"}</button>
         </form>
       </div>
     </>

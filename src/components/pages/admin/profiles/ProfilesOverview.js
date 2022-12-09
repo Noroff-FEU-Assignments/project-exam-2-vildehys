@@ -10,7 +10,6 @@ import ErrorMessage from "../../../common/ErrorMessage";
 
 export default function ProfilesOverview() {
   const [profiles, viewProfiles] = useState([]);
-  const [setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const axios = useAxios();
@@ -23,8 +22,6 @@ export default function ProfilesOverview() {
         viewProfiles(response.data);
       } catch (error) {
         setError(error.toString());
-      } finally {
-        setLoading(false);
       }
       if (error) return <ErrorMessage />;
     }

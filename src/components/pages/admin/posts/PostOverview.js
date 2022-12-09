@@ -10,11 +10,11 @@ export default function PostsList() {
   const { state } = useStore();
 
   if (state.loading) {
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
   }
 
   if (state.error) {
-    return <div>{state.error}</div>;
+    return <p>{state.error}</p>;
   }
 
   return (

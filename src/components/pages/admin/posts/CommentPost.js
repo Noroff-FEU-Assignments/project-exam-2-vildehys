@@ -12,10 +12,9 @@ const schema = yup.object().shape({
 });
 
 export default function CommentOnPost() {
-  const [, setSubmitting] = useState(false);
   const [postError, setPostError] = useState(null);
-  let { id } = useParams();
-  const { addComment } = useStore();
+  const { newComment } = useStore();
+  const [, setSubmitting] = useState(false);
 
   const {
     register,
@@ -26,6 +25,8 @@ export default function CommentOnPost() {
   });
 
   const axios = useAxios();
+
+  let { id } = useParams();
 
   async function postComment(data) {
     setSubmitting(true);
@@ -43,7 +44,7 @@ export default function CommentOnPost() {
         JSON.stringify(formData)
       );
       if (response.ok) {
-        addComment(response.data);
+        newComment(response.data);
       }
     } catch (error) {
       console.log("error", error);
